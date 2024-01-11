@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>{{ "file-options" | translate }}</h1>
+<div mat-dialog-content>{{ "select-action" | translate }}</div>
+<div mat-dialog-actions>
+  <button (click)="downloadPdf()" mat-button>
+    {{ "download" | translate }}
+  </button>
+  <button (click)="openPdfModal()" mat-button cdkFocusInitial>
+    {{ "preview" | translate }}
+  </button>
+</div>

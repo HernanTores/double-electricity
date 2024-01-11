@@ -1,0 +1,10 @@
+
+  <button mat-raised-button color="primary">
+    @if (loading) {
+      <mat-spinner color="accent" diameter="30"></mat-spinner>
+    } @else {
+      {{ text }}
+    }
+  </button>
+
+

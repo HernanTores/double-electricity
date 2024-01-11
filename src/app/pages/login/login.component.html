@@ -1,0 +1,50 @@
+<div class="content">
+  <img
+    src="../../../assets/imgs/Doble_Electricidad__2_-removebg-preview.png"
+    alt="logo"
+  />
+  <div class="box">
+    <form class="login">
+      <mat-form-field class="full-width">
+        <mat-label for="email">{{ "email" | translate }}</mat-label>
+        <input
+          type="email"
+          autocomplete="username"
+          id="email"
+          matInput
+          [formControl]="email"
+          [placeholder]="'admin-email' | translate"
+        />
+        @if (email.hasError('email') && !email.hasError('required')) {
+        <mat-error>{{ "valid-email-error" | translate }}</mat-error>
+        } @if (email.hasError('required')) {
+        <mat-error [innerHTML]="'required-email-error' | translate"></mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label for="password">{{ "enter-password" | translate }}</mat-label>
+        <input
+          autocomplete="current-password"
+          (keydown.enter)="login()"
+          [formControl]="password"
+          id="password"
+          matInput
+          [type]="hide ? 'password' : 'text'"
+        />
+        <button type="button" mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+    <a>{{ "reset-password" | translate }}</a>
+    <app-button
+      (click)="login()"
+      [text]="'access' | translate"
+      [loading]="loading"
+    ></app-button>
+    <div class="register">
+      <p>{{ "no-account" | translate }}</p>
+      <a>{{ "register-now" | translate }}</a>
+    </div>
+  </div>
+</div>

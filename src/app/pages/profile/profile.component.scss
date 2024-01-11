@@ -1,0 +1,23 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .box {
+    .full-name {
+      display: flex;
+      gap: 8px;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .box {
+      width: 70%;
+    }
+  }
+}

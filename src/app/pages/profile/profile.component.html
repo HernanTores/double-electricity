@@ -1,0 +1,51 @@
+<div class="content">
+  <h1>{{ "personal-data" | translate }}</h1>
+  <div class="box">
+    <form class="profile">
+      <div class="full-name">
+        <mat-form-field class="full-width">
+          <mat-label for="name">{{ "name" | translate }}</mat-label>
+          <input matInput id="name" [formControl]="name" />
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label for="lastName">{{ "last-name" | translate }}</mat-label>
+          <input matInput id="lastName" [formControl]="lastName" />
+        </mat-form-field>
+      </div>
+      <mat-form-field class="full-width">
+        <mat-label for="email">{{ "email" | translate }}</mat-label>
+        <input
+          type="email"
+          id="email"
+          matInput
+          [formControl]="email"
+          [placeholder]="'admin-email' | translate"
+        />
+        @if (email.hasError('email') && !email.hasError('required')) {
+        <mat-error>{{ "valid-email-error" | translate }}</mat-error>
+        } @if (email.hasError('required')) {
+        <mat-error [innerHTML]="'required-email-error' | translate"></mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label for="date">{{ "date-registration" | translate }}</mat-label>
+        <input matInput id="date" [formControl]="date" />
+        <mat-hint>{{ "date-format" | translate }}</mat-hint>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label for="address">{{ "address" | translate }}</mat-label>
+        <textarea
+          matInput
+          id="address"
+          [formControl]="address"
+          placeholder="{{ 'address-example' | translate }}"
+        ></textarea>
+      </mat-form-field>
+    </form>
+    <app-button
+      (click)="save()"
+      [text]="'edit' | translate"
+      [loading]="loading"
+    ></app-button>
+  </div>
+</div>

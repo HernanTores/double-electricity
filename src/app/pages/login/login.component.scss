@@ -1,0 +1,54 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 20%;
+  }
+
+  .box {
+    .login-form {
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    a {
+      font-weight: 500;
+      align-self: center;
+      margin-bottom: 20px;
+      color: #0d4de3;
+      text-decoration: none;
+    }
+
+    .register {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        margin: 0;
+      }
+
+      a {
+        margin: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .box {
+      width: 70%;
+    }
+
+    img {
+      width: 60%;
+    }
+  }
+}
