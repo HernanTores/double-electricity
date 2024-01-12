@@ -8,4 +8,5 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './page-not-found.component.html',
   styleUrl: './page-not-found.component.scss',
 })
+//Este componente es la página que se muestra cuando no se encuentra una ruta
 export class PageNotFoundComponent {}

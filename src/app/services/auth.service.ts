@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
+//Este servicio propociona funcionalidades de autenticación
+//Autenticación simulada con un usuario de prueba
 export class AuthService {
   mockEmail = 'admin@admin.com';
   mockPassword = 'admin';
@@ -15,12 +17,8 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    if (email === this.mockEmail && password === this.mockPassword) {
-      this.isAuthenticated = true;
-      return true;
-    } else {
-      this.isAuthenticated = false;
-      return false;
-    }
+    this.isAuthenticated =
+      email === this.mockEmail && password === this.mockPassword;
+    return this.isAuthenticated;
   }
 }

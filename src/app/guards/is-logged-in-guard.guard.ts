@@ -1,15 +1,15 @@
-import { inject } from '@angular/core';
-import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-
+import { CanActivateFn, Router } from '@angular/router';
+import { inject } from '@angular/core';
+// Este guard verifica si el usuario está autenticado antes de dar acceso a una ruta
 export const isLoggedInGuardGuard: CanActivateFn = (route, state) => {
-  const authService = inject(AuthService)
-  const router = inject(Router)
+  const authService = inject(AuthService);
+  const router = inject(Router);
 
   if (authService.isAuth()) {
-    return true
+    return true;
   } else {
-    const urlTree = router.createUrlTree(['/login'])
-    return urlTree
+    const urlTree = router.createUrlTree(['/login']);
+    return urlTree;
   }
 };

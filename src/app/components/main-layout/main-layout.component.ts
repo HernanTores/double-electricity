@@ -9,4 +9,5 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.scss',
 })
+// Este componente es el diseño principal de la aplicación
 export class MainLayoutComponent {}

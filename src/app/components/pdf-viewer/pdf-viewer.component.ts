@@ -9,6 +9,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
   templateUrl: './pdf-viewer.component.html',
   styleUrl: './pdf-viewer.component.scss',
 })
+// Este componente se usa para mostrar un visor de PDF
 export class PdfViewerComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 }

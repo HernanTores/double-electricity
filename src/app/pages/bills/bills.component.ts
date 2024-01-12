@@ -21,6 +21,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './bills.component.html',
   styleUrl: './bills.component.scss',
 })
+// Este componente muestra la lista de facturas y permite abrir un modal de confirmación
 export class BillsComponent {
   bills: Bill[] = [
     {

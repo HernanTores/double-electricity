@@ -1,12 +1,12 @@
+import { ButtonComponent } from '../../components/button/button.component';
+import { Component } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import {
   FormControl,
   FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ButtonComponent } from '../../components/button/button.component';
-import { Component } from '@angular/core';
-import { DatePipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -35,6 +35,7 @@ import { User } from '../../models/user.model';
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
 })
+//Este componente permite la visualización y edición de los datos del usuario
 export class ProfileComponent {
   user: User = {
     id: 1,

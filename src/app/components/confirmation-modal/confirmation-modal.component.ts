@@ -1,22 +1,24 @@
+import { Component, Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import {
   MAT_DIALOG_DATA,
   MatDialog,
   MatDialogRef,
 } from '@angular/material/dialog';
-import { Component, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-confirmation-modal',
   standalone: true,
-  imports: [MatDialogModule, MatButtonModule, TranslateModule],
+  imports: [MatButtonModule, MatDialogModule, TranslateModule],
   templateUrl: './confirmation-modal.component.html',
   styleUrl: './confirmation-modal.component.scss',
 })
+// Este componente es un modal de confirmación que muestra opciones para abrir o descargar un PDF
 export class ConfirmationModalComponent {
   constructor(
     public http: HttpClient,
@@ -37,6 +39,7 @@ export class ConfirmationModalComponent {
     const url = `../../../assets/pdfs/${this.data.id}.pdf`;
     this.http
       .get(url, { responseType: 'arraybuffer' })
+      .pipe(first())
       .subscribe((data: ArrayBuffer) => {
         const blob = new Blob([data], { type: 'application/pdf' });
         const downloadLink = document.createElement('a');

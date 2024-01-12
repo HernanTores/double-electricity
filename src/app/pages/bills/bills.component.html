@@ -3,11 +3,11 @@
   @if (bills.length > 0) { @for (bill of bills; track bill.id) {
   <mat-list-item class="item" (click)="openModal(bill)">
     <mat-icon matListItemIcon>folder</mat-icon>
-    <div matListItemTitle>{{ bill.name }}</div>
-    <div matListItemLine>
+    <span matListItemTitle>{{ bill.name }}</span>
+    <span matListItemLine>
       {{ bill.date | date : "dd/MM/yyyy" }} | {{ bill.address }} |
       {{ bill.amount | currency : "EUR" }}
-    </div>
+    </span>
   </mat-list-item>
   <mat-divider></mat-divider>
   } }@else {

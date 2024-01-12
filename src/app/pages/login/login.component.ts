@@ -1,12 +1,12 @@
+import { AuthService } from '../../services/auth.service';
+import { ButtonComponent } from '../../components/button/button.component';
+import { Component } from '@angular/core';
 import {
   FormControl,
   FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
-import { ButtonComponent } from '../../components/button/button.component';
-import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -32,6 +32,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
+// Este componente maneja la funcionalidad de inicio de sesión
 export class LoginComponent {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);

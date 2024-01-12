@@ -1,3 +1,4 @@
+// Define la estructura de un objeto usuario
 export interface User {
   id: number;
   name: string;
